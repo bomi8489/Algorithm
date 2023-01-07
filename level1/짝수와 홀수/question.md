@@ -19,3 +19,19 @@
 |:---:|:------:|
 |3	|"Odd"|
 |4	|"Even"|
+
+
+## 풀이
+
+- 입력값을 2로 나눈 나머지가 0일 때 : 짝수
+- 입력값을 2로 나눈 나머지가 0이 아닐 때 : 홀수
+
+
+```
+function solution(num) {
+    var answer = '';
+    if(num % 2 === 0) answer = "Even";
+    else if(num % 2 !== 0 ) answer = "Odd";
+    return answer;
+}
+```
