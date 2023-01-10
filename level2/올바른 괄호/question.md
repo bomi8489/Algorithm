@@ -34,8 +34,16 @@
 
 ## 풀이
 
-- 
+- '(' 기호는 count+1, ')' 기호는 count-1를 하여 count가 0이면 true 아니면 false를 반환 하게 한뒤, (5번줄)for구문 안에서 count가 음수가 되면 false를 반환하게 하여 문자열의 첫 인덱스에 ')'가 오거나 괄호가 열리지 않고 닫히지만 '('과 ')' 갯수가 같아 count가 0이 되는 상황을 방지한다. 
+    > ex : "()))((()"
 
 ```
-
+function solution(s){
+    let count = 0
+    for (let i=0; i<s.length; i++) {
+        count += s[i] === '('? 1: -1
+        if(count < 0) return false
+    }
+    return count === 0? true: false;
+}
 ```
