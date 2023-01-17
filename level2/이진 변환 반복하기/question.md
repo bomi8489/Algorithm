@@ -66,3 +66,19 @@
 |4	|"10"	|1	|1	|"1"|
 
 4번의 이진 변환을 하는 동안 1개의 0을 제거했으므로, [4,1]을 return 해야 합니다.
+
+<br>
+
+## 풀이
+
+```
+function solution(s) {
+    let answer = [0, 0]
+    while(s.length > 1) {
+        answer[1] += s.split('').filter(data => data == 0).length
+        s = s.split('').filter(data => data > 0).join('').length.toString(2);
+        answer[0]++;
+    }
+    return answer
+}
+```
