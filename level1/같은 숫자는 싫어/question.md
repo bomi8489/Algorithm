@@ -31,6 +31,11 @@
 
 ## 풀이
 
-```
+- i번째 data가 i+1번쨰 data와 다른값만 반환할 배열에 추가
 
+```
+function solution(arr){
+    var answer = arr.filter((data, idx) => data !== arr[idx+1]);
+    return answer;
+}
 ```
