@@ -1,19 +1,14 @@
-// function solution(s) {
-//     var answer = s.split('');
-//     for(let i=0; i<answer.length; i++){
-//         if(i % 2 == 0)  answer[i] = answer[i].toUpperCase()
-//         else answer[i] = answer[i].toLowerCase()
-//     }
-//     return answer.join('');
-// }
-
 function solution(s) {
-    var answer = []
-    s.split('').map((str, idx) => {
-        if(idx % 2 == 0) answer[idx] = str.toUpperCase();
-        else answer[idx] = str.toLowerCase()
-    });
-    return answer.join('');
+    let answer = s.split(' ').map((str) => {
+        let word = str.split('')
+        return word.map((data, idx) => {
+            if(idx % 2 == 0) {
+                return data.toUpperCase()
+            }
+            else return data.toLowerCase()
+        }).join('')
+    })
+    return answer.join(' ');
 }
 
 console.log(solution("try hello world"));
