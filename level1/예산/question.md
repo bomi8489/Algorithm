@@ -38,3 +38,13 @@
 입출력 예 #2
 
 모든 부서의 물품을 구매해주면 10원이 됩니다. 따라서 최대 4개 부서의 물품을 구매해 줄 수 있습니다.
+
+<br>
+
+## 풀이
+
+```
+function solution(d, budget) {
+    return d.sort((a, b) => a - b).filter(data => (budget -= data) >= 0).length
+}
+```
