@@ -5,19 +5,21 @@ function solution(strings, n) {
         let b = str2[n]
         if (a > b) return 1
         else if(a < b) return -1
-        else str = a
+        else if(a == b) {
+            if(str1 > str2) return 1
+            else if(str1 < str2) return -1
+        }
     });
-    let restArr = answer.filter(data => data[n] == str).sort()
-    console.log(restArr, answer)
-    //return answer;
+    return answer;
 }
 
-function solution2(strings, n) {
-    return strings.sort()
+function solution2(strings, n){
+    return strings.sort((s1, s2) => 
+        s1[n] === s2[n] ? s1.localeCompare(s2) : s1[n].localeCompare(s2[n])
+    );
 }
 
-// console.log(solution(["sun", "bed", "car"], 1))
+console.log(solution(["sun", "bed", "car"], 1))
 console.log(solution(["abce", "abcd", "cdx"], 2))
-// console.log(solution(["zbcrw", "cdbwb", "sccer"], 2))
+console.log(solution(["zbcrw", "cdbwb", "sccer"], 2))
 console.log(solution(["abce", "abcd", "abcdx"], 2))
-// console.log(solution2(["abce", "abcd", "abcdx"], 2))

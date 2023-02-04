@@ -35,5 +35,18 @@
 ## 풀이
 
 ```
-
+function solution(strings, n) {
+    let str = ''
+    let answer = strings.sort((str1, str2) => {
+        let a = str1[n]
+        let b = str2[n]
+        if (a > b) return 1
+        else if(a < b) return -1
+        else if(a == b) {
+            if(str1 > str2) return 1
+            else if(str1 < str2) return -1
+        }
+    });
+    return answer;
+}
 ```
