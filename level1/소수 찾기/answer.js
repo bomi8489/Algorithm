@@ -1,14 +1,16 @@
 function solution(n) {
-    let answer = 0
-    let array = Array(n-1).fill(2).map((data, idx) => data + idx)
-                .filter((data, idx) => {
-                    for(let i = 2; data>i; i++){
-                        if(n % i === 0) return false
-                    }
-                })
-    console.log(array)
-    return answer
+    const answer = new Array(n).fill(true)
+    answer[0] = false
+    for(let i = 2; i**2 <= n; i++){
+        if(answer[i-1] === true) {
+            for(let j = i**2; j<=n; j+=i) {
+                answer[j-1] = false
+            }
+        }
+    }
+    console.log(answer)
+    return answer.filter(e => e).length
 }
 
 console.log(solution(10))
-//console.log(solution(5))
+console.log(solution(5))
