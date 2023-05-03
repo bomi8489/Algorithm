@@ -5,9 +5,7 @@ function solution(n, m, section) {
     
     while(wallArray.findIndex((e) => e === 0) !== -1) {
         let zeroIndex = wallArray.findIndex((e) => e === 0);
-        for(i=zeroIndex; i < zeroIndex+m && i < wallArray.length; i++){
-            wallArray[i] = 1
-        }
+        wallArray.fill(1, zeroIndex, zeroIndex+m)
         answer++;
     }
     return answer;
