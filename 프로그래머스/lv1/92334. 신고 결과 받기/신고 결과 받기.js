@@ -7,12 +7,14 @@ function solution(id_list, report, k) {
     setReportArray.map(reportedDataArray => {
         reportedUser[id_list.indexOf(reportedDataArray[1])] += 1;
     });
-    let tmpArray = reportedUser.map((reportedNum, idx) => {
+    
+    reportedUser.map((reportedNum, idx) => {
         if(reportedNum >= k) {
             setReportArray.map(reportedDataArray => {
                 if(reportedDataArray[1] === id_list[idx]) receivedMail[id_list.indexOf(reportedDataArray[0])]++
             })
         }
-    })
+    });
+    
     return receivedMail;
 }
