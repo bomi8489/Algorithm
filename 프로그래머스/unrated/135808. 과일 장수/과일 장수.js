@@ -1,12 +1,12 @@
 function solution(k, m, score) {
     let answer = 0;
-    score.sort((a, b) => a - b)
-    while(score.length >= m){
-        let newArrary = [];
-        for(let j = 0; j < m; j++){
-            newArrary.push(score.pop());
+    score.sort((a, b) => a - b);
+    while(score.length >= m) {
+        let initArray = [];
+        for(let i = 0; i < m; i++){
+            initArray.push(score.pop());
         }
-        answer += newArrary[newArrary.length-1]*m;
+        answer += initArray[initArray.length-1]*m;
     }
     return answer
 }
