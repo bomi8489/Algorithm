@@ -7,7 +7,7 @@ function solution(new_id) {
     answer = new_id.toLowerCase();
     
     // 2단계
-    answer = answer.replaceAll(secondReg, "");
+    answer = answer.replaceAll(secondReg, '');
     
     // 3단계
     while(answer.includes('..')){
@@ -15,7 +15,7 @@ function solution(new_id) {
     }
     
     // 4단계
-    answer = answer.replace(/^\.|\.$/g, '');
+    answer = answer.replaceAll(/^\.|\.$/g, '');
     
     // 5단계
     if(answer.length === 0) answer += 'a';
