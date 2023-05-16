@@ -1,18 +1,13 @@
 function solution(new_id) {
+    let answer = '';
     let firstReg = /[A-Z]/;
-    let secondReg = /[\{\}\[\]\/?,:\)*~!^\+<>@\#$%&\=\(]/;
+    let secondReg = /[\{\}\[\]\/?,:\)*~!^\+<>@\#$%&\=\(]/g;
     
     // 1단계
-    let answer = new_id.split('').map(letter => {
-        if(firstReg.test(letter)) return letter.toLowerCase();
-        else return letter;
-    }).join('');
+    answer = new_id.toLowerCase();
     
     // 2단계
-    answer = answer.split('').map(letter => {
-        if(secondReg.test(letter)) return '';
-        else return letter;
-    }).join('');
+    answer = answer.replaceAll(secondReg, "");
     
     // 3단계
     while(answer.includes('..')){
@@ -20,8 +15,7 @@ function solution(new_id) {
     }
     
     // 4단계
-    if(answer[0] === '.') answer = answer.split('').filter((_, idx) => idx !== 0).join('');
-    if(answer.at(-1) === '.') answer = answer.split('').filter((_, idx) => idx !== answer.length-1).join('');
+    answer = answer.replace(/^\.|\.$/g, '');
     
     // 5단계
     if(answer.length === 0) answer += 'a';
@@ -29,7 +23,7 @@ function solution(new_id) {
     // 6단계
     if(answer.length > 15) {
         answer = answer.substr(0, 15);
-        if(answer.at(-1) === '.') answer = answer.split('').filter((_, idx) => idx !== answer.length-1).join('');
+        answer = answer.replace(/\.$/, '');
     }
     
     // 7단계
@@ -39,6 +33,5 @@ function solution(new_id) {
         }
     }
     
-    console.log(answer)
     return answer;
 }
