@@ -1,13 +1,11 @@
 function solution(s) {
-    let splitedString = s.split('');
-    let answer = [];
-    
-    for(let i = 0; i<splitedString.length; i++){
-        if(splitedString[i] !== (answer[answer.length-1] ?? '')) {
-            answer.push(splitedString[i])
-        }
-        else answer.pop();
+    let answer = s.split('');
+    let newArr = [answer[0]];
+
+    for(let i = 1; i < answer.length; i++){
+        if(answer[i] !== newArr[newArr.length-1]) newArr.push(answer[i])
+        else newArr.pop();
     }
     
-    return answer.length ? 0 : 1;
+    return newArr.length ? 0 : 1;
 }
