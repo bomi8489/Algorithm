@@ -1,5 +1,4 @@
 function solution(nums) {
-    let numsLength = nums.length
     let setNums = [...new Set(nums)];
-    return (numsLength/2 < setNums.length) ? answer = Math.floor(numsLength/2) : answer = setNums.length
+    return (nums.length/2 < setNums.length) ? answer = Math.floor(nums.length/2) : answer = setNums.length
 }
