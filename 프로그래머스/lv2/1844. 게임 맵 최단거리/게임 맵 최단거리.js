@@ -1,8 +1,8 @@
 function solution(maps) {
     let xLength = maps[0].length;
     let yLength = maps.length;
-    let xGoal = xLength-1;
-    let yGoal = yLength-1;
+    let xGoal = xLength - 1;
+    let yGoal = yLength - 1;
     
     let queue = [];
     queue.push([0, 0, 1]);
@@ -19,6 +19,7 @@ function solution(maps) {
         }
         
         maps[y][x] = 0;
+        
         queue.push([y+1, x, answer+1]);
         queue.push([y, x+1, answer+1]);
         queue.push([y-1, x, answer+1]);
