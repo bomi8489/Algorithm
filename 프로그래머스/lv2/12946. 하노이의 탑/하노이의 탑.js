@@ -9,7 +9,7 @@ function solution(n) {
     }
     
     let hanoi = (n, start, goal, via) => {
-        if(n === 1) move(start, goal)
+        if(n === 1) move(start, goal);
         else {
             hanoi(n-1, start, via, goal);
             move(start, goal);
