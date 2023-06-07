@@ -1,23 +1,16 @@
 function solution(n) {
     let answer = [];
-    let start = 1;
-    let via = 2;
-    let goal = 3;
     
-    let move = (start, goal) => {
-        answer.push([start, goal]);
-    }
-    
-    let hanoi = (n, start, goal, via) => {
-        if(n === 1) move(start, goal);
+    let hanoi = (n, start, mid, end) => {
+        if(n === 1) answer.push([start, end]);
         else {
-            hanoi(n-1, start, via, goal);
-            move(start, goal);
-            hanoi(n-1, via, goal, start);
+            hanoi(n-1, start, end, mid);
+            answer.push([start, end])
+            hanoi(n-1, mid, start, end);
         }
     }
     
-    hanoi(n, start, goal, via);
+    hanoi(n, 1, 2, 3);
     
     return answer;
 }
