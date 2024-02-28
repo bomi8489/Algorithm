@@ -1,5 +1,5 @@
 function solution(s, skip, index) {
-    let alphabetString = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
+    let alphabetString = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
     let skippedString = skip.split('').map(item => 
         alphabetString = alphabetString.replaceAll(item, '')
     ).at(-1)
