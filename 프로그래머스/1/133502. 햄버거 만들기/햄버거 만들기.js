@@ -8,7 +8,6 @@ function solution(ingredient) {
             answer++
             i = tmp.at(-1) - 3
             tmp.pop()
-            //console.log(ingredient, i)
         } else {
             tmp.push(i)
         }
