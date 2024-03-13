@@ -1,5 +1,5 @@
 function solution(n) {
-    let answer = []
+    const answer = []
     while(n > 0) {
         if (n % 3 !== 0) {
             let rest = n % 3
