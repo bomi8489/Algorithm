@@ -3,10 +3,7 @@ const input = require('fs')
     .toString()
     .trim()
     .split("\n")
-    .map(e => {
-      if (e/e === 1) return Number(e)
-      else return e.split(' ')
-    })
+    .map(e => e.split(' '))
 
 let n = input.shift()
 const peopleMap = new Map(input.map(e => [e[0], e[1]]))
