@@ -9,9 +9,10 @@ const groupArr = input
 const groupObj = {}
 
 while(N > 0) {
+  // 걸그룹 이름: [멤버 이름]
   groupObj[groupArr[0]] = groupArr.splice(2, +groupArr[1]).sort()
-  groupArr.shift()
-  groupArr.shift()
+  // 걸그룹 이름, 멤버 숫자 삭제
+  groupArr.splice(0, 2)
   N--
 }
 
