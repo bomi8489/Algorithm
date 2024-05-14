@@ -1,0 +1,11 @@
+const input = require('fs')
+    .readFileSync(process.platform === "linux" ? "/dev/stdin" : "./input.txt")
+    .toString()
+    .trim()
+    .split("\n")
+    .map(e => e/e === 1 ? Number(e) : e)
+
+const N = input.shift()
+const arr = input.map(e => e.split(' ').map(el => el/el === 1 ? Number(el): el))
+arr.sort((a, b) => a[0] - b[0])
+arr.map(e => console.log(e.join(' ')))
